@@ -22,8 +22,8 @@ awesome/6.5.1/css/all.min.css">
 .
 .
 <div class="banner"></div>
-<div class="carousel-container">
-<div class="carousel-track">
+<div class="carrossel-container">
+<div class="carrossel-track">
 <div class="slide" style="background-image: url('imagens/filme1.jpg');"></div>
 <div class="slide" style="background-image: url('imagens/filme2.jpg');"></div>
 <div class="slide" style="background-image: url('imagens/filme3.jpg');"></div>
@@ -55,7 +55,7 @@ document.getElementById('footer-placeholder').innerHTML = data;
 });
 let currentIndex = 0;
 function moveSlide(direction) {
-const track = document.querySelector('.carousel-track');
+const track = document.querySelector('.carrossel-track');
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 currentIndex += direction;
