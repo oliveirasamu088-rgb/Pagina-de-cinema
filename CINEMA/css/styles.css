@@ -4,7 +4,6 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
-STYLES.CSS
 /* --- CONFIGURAÇÃO DA PÁGINA INTEIRA --- */
 body {
 display: flex;
@@ -65,7 +64,8 @@ align-items: center;
 }
 /* Controle do tamanho da imagem */
 .logo {
-max-height: 30px; /* Garante que a logo não estoure os 150px do cabeçalho */
+max-height: 80px; /* Garante que a logo não estoure os 150px do cabeçalho */
+margin-right: auto;
 width: auto;
 }
 /* Organização dos itens do menu */
@@ -246,6 +246,7 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 /* Estilo do Carrossel de Filmes */
 .carousel-container {
+background-image: url('../imagens/carrossel/filme1.jpg');
 width: 100vw;
 height: 8cm; /* Aumentei um pouco para os cartazes ficarem maiores que o banner */
 position: relative;
