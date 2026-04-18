@@ -4,24 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alfa Cinemas</title>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font
 awesome/6.5.1/css/all.min.css">
 <link rel="icon" href="imagens/icone.png" type="image/png">
 </head>
 <body>
-<img src="imagens/logo1.png" alt="Logo" class="logo">
+<div class="cinema-header"><img src="imagens/logo1.png" alt="Logo" class="logo"></div>
 <div class="banner"></div>
 <main class="main-content">
+    
 </main>
 <div id="footer-placeholder"></div>
 <div id="header-placeholder"></div>
-<main class="main-content">
-</main>
-<div id="footer-placeholder"></div>
-.
-.
-<div class="banner"></div>
 <div class="carrossel-container">
 <div class="carrossel-track">
 <div class="slide" style="background-image: url('imagens/filme1.jpg');"></div>
@@ -33,44 +28,6 @@ awesome/6.5.1/css/all.min.css">
 <button class="btn-prev" onclick="moveSlide(-1)">&#10094;</button>
 <button class="btn-next" onclick="moveSlide(1)">&#10095;</button>
 </div>
-.
-.
-
- <script>
-// Puxa o cabeçalho
-fetch('includes/header.html')
-.then(response=> response.text())
-.then(data=>{
-document.getElementById('header-placeholder').innerHTML =data;
-});
-// Puxa o rodapé
-fetch('includes/footer.html')
-.then(response=> response.text())
-.then(data=>{
-document.getElementById('footer-placeholder').innerHTML=data;
-fetch('includes/footer.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('footer-placeholder').innerHTML = data;
-});
-let currentIndex = 0;
-function moveSlide(direction) {
-const track = document.querySelector('.carrossel-track');
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-currentIndex += direction;
-if (currentIndex >= totalSlides) {
-currentIndex = 0;
-} else if (currentIndex < 0) {
-currentIndex = totalSlides- 1;
-}
-// Calcula o deslocamento
-const offset =-currentIndex * 100;
-track.style.transform = `translateX(${offset}vw)`;
-} 
-});
-
-</script>
 </script>
 <div class="social-section">
 <h3>SIGA-NOS</h3>
@@ -100,5 +57,26 @@ Copyright &copy; 2026 Alfa Cinemas
 <a href="#">Termos de uso</a>
 </div>
 </div> 
+<script>
+fetch('includes/footer.html')
+.then(response => response.text())
+.then(data => {
+document.getElementById('footer-placeholder').innerHTML = data;
+});
+let currentIndex = 0;
+function moveSlide(direction) {
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+currentIndex += direction;
+if (currentIndex >= totalSlides) {
+currentIndex = 0;
+} else if (currentIndex < 0) {
+currentIndex = totalSlides- 1;
+}
+const offset =-currentIndex * 100;
+track.style.transform = `translateX(${offset}vw)`;
+} 
+</script>
 </body>
 </html>
